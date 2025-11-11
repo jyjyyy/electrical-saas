@@ -1,0 +1,79 @@
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.06);
+  color: #333;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #6366f1;
+  text-decoration: none;
+  font-weight: 500;
+  margin-bottom: 20px;
+  transition: color 0.2s;
+}
+
+.backLink:hover {
+  color: #7c3aed;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: #222;
+  text-align: center;
+}
+
+.infoBox {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  color: #444;
+  font-size: 16px;
+  line-height: 1.5;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.planCard {
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  text-align: center;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+}
+
+.planCard h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.planCard button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin: 10px 0;
+  font-size: 16px;
+  background: linear-gradient(to right, #7c3aed, #6366f1);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.planCard button:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+}

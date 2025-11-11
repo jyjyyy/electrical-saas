@@ -1,0 +1,70 @@
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+  text-align: center;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #2e7d32;
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.changePassword,
+.logout {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #29bfa6;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.changePassword:hover,
+.logout:hover {
+  background-color: #1fa58d;
+}
+
+.backButton {
+  background: none;
+  border: none;
+  color: #3f51b5;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 1.5rem;
+}

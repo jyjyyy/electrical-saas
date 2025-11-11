@@ -1,0 +1,139 @@
+.container {
+  max-width: 720px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #f9fbfd;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #1e293b;
+}
+
+.backLink {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #3b82f6;
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: #2563eb;
+}
+
+.modeToggle {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.toggleButton {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #3b82f6;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggleButton:hover {
+  background-color: #2563eb;
+}
+
+.premiumWarning {
+  background-color: #fff0f0;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.premiumButton {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.premiumButton:hover {
+  background-color: #2563eb;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #334155;
+}
+
+.inputGroup input,
+.inputGroup select {
+  padding: 0.6rem 0.9rem;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+.button {
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #059669;
+}
+
+.result {
+  margin-top: 2rem;
+  background-color: #f0fdf4;
+  border-left: 4px solid #10b981;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  color: #064e3b;
+  font-size: 1rem;
+  line-height: 1.6;
+}

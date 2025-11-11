@@ -1,0 +1,129 @@
+.container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #374151;
+  background: #e5e7eb;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease;
+}
+
+.backLink:hover {
+  background-color: #d1d5db;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+  max-width: 1000px;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.tableHeader,
+.tableRow {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr 1.2fr 1.2fr 1.4fr;
+  padding: 1rem;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: white;
+}
+
+.tableHeader {
+  background-color: #eff6ff;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.tableRow:hover {
+  background-color: #f1f5f9;
+}
+
+.tableRow span {
+  font-size: 0.95rem;
+  color: #374151;
+  word-break: break-word;
+}
+
+.summary {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  max-width: 1000px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+.summary h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+}
+
+.summary p {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 0.8rem;
+}
+
+.summary ul {
+  padding-left: 1.2rem;
+  list-style: disc;
+  color: #374151;
+  margin-top: 0.5rem;
+}
+/* Différentiel - Rangée */
+.diffRow {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 2px solid #d1d5db;
+  border-radius: 12px;
+  background-color: #f9fafb;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.diffTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #111827;
+}
+
+.diffInfo {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.diffList {
+  margin-left: 1.2rem;
+  list-style-type: disc;
+  color: #1f2937;
+  font-size: 0.95rem;
+}

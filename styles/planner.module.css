@@ -1,0 +1,134 @@
+.container {
+  min-height: 100vh;
+  background-color: #f9fafb;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #1f2937;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+.checkboxGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.checkboxItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #f3f4f6;
+  padding: 0.6rem 1rem;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.checkboxItem:hover {
+  background-color: #e5e7eb;
+}
+
+.inputGroup {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: -1rem;
+  justify-content: center;
+}
+
+.label {
+  flex: 1;
+  font-weight: 500;
+  color: #374151;
+  text-align: right;
+}
+
+.inputNumber {
+  width: 80px;
+  padding: 0.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.button {
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: center;
+}
+
+.button:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+}
+
+.result {
+  background-color: #ecfdf5;
+  color: #065f46;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+}
+.limitMessage {
+  background-color: #fef2f2;
+  color: #b91c1c;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 1rem;
+  border: 1px solid #fecaca;
+}
+
+.premiumButton {
+  background-color: #10b981;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.75rem;
+}
+
+.premiumButton:hover {
+  background-color: #059669;
+  transform: translateY(-1px);
+}
