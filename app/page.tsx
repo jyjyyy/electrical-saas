@@ -1,29 +1,36 @@
-// app/page.tsx
+'use client';
 
-export default function Home() {
+import Link from 'next/link';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { auth } from '@/lib/firebase';
+import styles from './home.module.css';
+
+export default function HomePage() {
+  const [user] = useAuthState(auth);
+
   return (
-    <main style={{ padding: "2rem", textAlign: "center" }}>
-      <h1 style={{ fontSize: "2rem", fontWeight: "bold" }}>
-        Bienvenue sur ElectriCalc ⚡
-      </h1>
-      <p style={{ marginTop: "1rem", fontSize: "1.2rem" }}>
-        Votre assistant intelligent pour les calculs électriques.
+    <main className={styles.container}>
+      <h1 className={styles.title}>⚡ ElectriCalc FR</h1>
+      <p className={styles.subtitle}>
+        Le SaaS intelligent pour tous vos calculs électriques : sections de câbles, devis, tableaux, photovoltaïque...
       </p>
-      <p style={{ marginTop: "2rem" }}>
-        <a
-          href="/dashboard"
-          style={{
-            display: "inline-block",
-            padding: "10px 20px",
-            backgroundColor: "#3b82f6",
-            color: "#fff",
-            borderRadius: "8px",
-            textDecoration: "none",
-          }}
-        >
-          Accéder au Dashboard
-        </a>
-      </p>
+
+      <div className={styles.buttons}>
+        {user ? (
+          <Link href="/dashboard" className={styles.btnPrimary}>
+            Accéder au tableau de bord
+          </Link>
+        ) : (
+          <>
+            <Link href="/register" className={styles.btnPrimary}>
+              Créer un compte
+            </Link>
+            <Link href="/login" className={styles.btnSecondary}>
+              Déjà inscrit ? Se connecter
+            </Link>
+          </>
+        )}
+      </div>
     </main>
   );
 }

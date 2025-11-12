@@ -18,11 +18,17 @@ export default function SubscriptionPage() {
       });
 
       const data = await res.json();
+      console.log("Stripe Checkout response:", data); // 🐛 DEBUG
+
       if (data.url) {
         window.location.href = data.url;
+      } else {
+        console.error("Erreur : aucune URL de redirection reçue :", data);
+        alert("Impossible de rediriger vers Stripe. Veuillez réessayer.");
       }
     } catch (error) {
       console.error("Erreur API checkout:", error);
+      alert("Une erreur est survenue lors de la tentative d’abonnement.");
     }
   };
 

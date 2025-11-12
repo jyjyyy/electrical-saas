@@ -7,29 +7,24 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 
 type PlanType = "monthly" | "yearly";
 
-// ✅ Typage strict
 const priceIds: Record<PlanType, string> = {
-  monthly: "price_1SCen3LoGgvWK6MnDWLMVaFh",
-  yearly: "price_1SCeqyLoGgvWK6MnM21LNuAe",
+  monthly: process.env.STRIPE_PRICE_ID_MONTHLY!,
+  yearly: process.env.STRIPE_PRICE_ID_YEARLY!,
 };
 
-// ✅ Typage du body de la requête
 type CheckoutBody = {
   plan: PlanType;
 };
 
 export async function POST(req: NextRequest) {
   try {
-    // ✅ Lecture sécurisée du JSON
-    const body = (await req.json()) as unknown as CheckoutBody;
+    const body = (await req.json()) as CheckoutBody;
     const { plan } = body;
 
-    // ✅ Vérification runtime
-    if (plan !== "monthly" && plan !== "yearly") {
+    if (!plan || !(plan in priceIds)) {
       return NextResponse.json({ error: "Plan invalide" }, { status: 400 });
     }
 
-    // ✅ Ici TS sait que plan est un PlanType
     const priceId = priceIds[plan];
 
     const session = await stripe.checkout.sessions.create({
@@ -41,11 +36,27 @@ export async function POST(req: NextRequest) {
       cancel_url: `${process.env.NEXT_PUBLIC_BASE_URL}/settings?canceled=true`,
     });
 
-    return NextResponse.json({ url: session.url });
-  } catch (error) {
-    console.error("Erreur Stripe :", error);
+    if (!session.url) {
+      console.error("❌ session.url est vide !");
+      return NextResponse.json(
+        { error: "Erreur : session URL manquante." },
+        { status: 500 }
+      );
+    }
+
     return NextResponse.json(
-      { error: "Erreur lors de la création de la session" },
+      { url: session.url },
+      {
+        status: 200,
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
+    );
+  } catch (error) {
+    console.error("❌ Erreur Stripe :", error);
+    return NextResponse.json(
+      { error: "Erreur lors de la création de la session Stripe" },
       { status: 500 }
     );
   }
