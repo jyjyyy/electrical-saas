@@ -4,24 +4,25 @@ import { useState, useEffect } from 'react';
 import styles from './communication.module.css';
 import { FaArrowLeft, FaPaperPlane } from 'react-icons/fa';
 import Link from 'next/link';
-import { db } from '@/lib/firebase';
+import { db, auth } from '@/lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
-import { useSession } from 'next-auth/react';
 
 export default function CommunicationPage() {
-  const { data: session } = useSession();
   const [message, setMessage] = useState('');
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!message.trim() || !session?.user?.email) return;
+
+    const userEmail = auth.currentUser?.email;
+
+    if (!message.trim() || !userEmail) return;
 
     setLoading(true);
     try {
       await addDoc(collection(db, 'feedbacks'), {
-        email: session.user.email,
+        email: userEmail,
         message: message.trim(),
         createdAt: serverTimestamp(),
       });
@@ -64,8 +65,8 @@ export default function CommunicationPage() {
           required
         />
         <button type="submit" className={styles.button} disabled={loading}>
-  {loading ? 'Envoi...' : <>Envoyer <FaPaperPlane /></>}
-</button>
+          {loading ? 'Envoi...' : <>Envoyer <FaPaperPlane /></>}
+        </button>
       </form>
 
       {success && (
